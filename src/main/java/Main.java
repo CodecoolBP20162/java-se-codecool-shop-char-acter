@@ -10,11 +10,19 @@ import spark.Response;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import spark.Session;
 import java.util.ArrayList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 public class Main {
 
+    //Logger
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
+
+
 
         // default server settings
         exception(Exception.class, (e, req, res) -> e.printStackTrace());
@@ -139,6 +147,19 @@ public class Main {
         productDataStore.add(new Product("Trust ClassicLine", 6.96f, "USD", "Hungarian layout", accessories, trust));
         productDataStore.add(new Product("Maxtor M3 portable mass storage", 69.59f, "USD", "1 TB, 2.5\", USB 3.0, Black", accessories, maxtor));
         productDataStore.add(new Product("HAMA Urage Reaper NXT mouse", 24.44f, "USD", "Black with led", accessories, hama));
+
+
+        logger.info("I am informative!");
+
+        Product w = new Product("ASUS ZenFone 3 MAX ZC520TL", 202.46f, "USD", "Dual SIM, 32GB, LTE, Silver", phone, asus);
+        w.setTemperature(10);
+        w.setTemperature(29);
+        w.setTemperature(31);
+        w.setTemperature(51);
+
+
+
+
 
     }
 
